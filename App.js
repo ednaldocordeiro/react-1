@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView } from 'react-native';
+
+import { Picker } from '@react-native-picker/picker';
 import React, { useState } from 'react';
 
 export default function App() {
 
   const [newMovie, setNewMovie] = useState('');
   const [newMusic, setNewMusic] = useState('');
+
+  const [choosenCountry, setChoosenCountry] = useState('');
 
 
   return (
@@ -72,8 +76,23 @@ export default function App() {
             onChangeText={setNewMusic}
             value={newMusic}
           />
+          <View style={{width: '100%', height: 10, marginBottom: 50}}>
+            <Picker
+              selectedValue={choosenCountry}
+              onValueChange={(value) => {
+                setChoosenCountry(value);
+              }}
+              enabled
+              style={styles.picker}
+            >
+              <Picker.Item label={'USA'} value={'USA'} />
+              <Picker.Item label={'England'} value={'England'} />
+              <Picker.Item label={'Denmark'} value={'Denmark'} />
+            </Picker>
+          </View>
           <Button 
-            onPress={() => alert(`Novo filme: ${newMovie}\nNova música: ${newMusic}`)}
+            onPress={() => alert(`Novo filme: ${newMovie}\nNova música: ${newMusic}\nGostaria de viajar para: ${choosenCountry}`
+            )}
             title={'ADD'}
           />
         </View>
@@ -120,6 +139,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     width: '100%',
     padding: 5,
+    borderRadius: 5,
+  },
+  picker: {
+    backgroundColor: '#f3f3f3', 
+    width: '100%', 
+    height: '100%',
     borderRadius: 5,
   }
 });
