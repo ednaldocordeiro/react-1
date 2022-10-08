@@ -10,6 +10,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <ScrollView  
+        style={{width: '100%', height: '100%'}} 
+        contentContainerStyle={{paddingBottom: 20, alignItems: 'center'}}
+        showsVerticalScrollIndicator={false}
+      >
         <StatusBar style="auto" />
         <View>
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
@@ -72,6 +77,7 @@ export default function App() {
             title={'ADD'}
           />
         </View>
+      </ScrollView>
     </View>
   );
 }
@@ -82,6 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: 50,
   },
   name: {
     fontWeight: 'bold',
@@ -90,8 +97,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    width: 50,
-    height: 60
+    width: 170,
+    height: 260
   },
   movies: {
     fontStyle: 'italic',
