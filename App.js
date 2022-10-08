@@ -22,7 +22,7 @@ export default function App() {
     <View style={styles.container}>
       <ScrollView  
         style={{width: '100%', height: '100%'}} 
-        contentContainerStyle={{paddingBottom: 20, alignItems: 'center', width: '100%'}}
+        contentContainerStyle={{paddingBottom: 20, alignItems: 'center'}}
         showsVerticalScrollIndicator={false}
       >
         <StatusBar style="auto" />
