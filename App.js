@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 export default function App() {
 
-  const [newMovie, setNewMovie] = useState('');
-  const [newMusic, setNewMusic] = useState('');
+  const [newMovieName, setNewMovieName] = useState('');
+  const [newMusicName, setNewMusicName] = useState('');
 
 
   return (
@@ -58,17 +58,17 @@ export default function App() {
           <TextInput 
             placeholder='Adicione um filme' 
             style={styles.inputs}
-            onChangeText={setNewMovie}
-            value={newMovie}
+            onChangeText={setNewMovieName}
+            value={newMovieName}
           />
           <TextInput 
             placeholder='Adicione uma música' 
             style={styles.inputs}
-            onChangeText={setNewMusic}
-            value={newMusic}
+            onChangeText={setNewMusicName}
+            value={newMusicName}
           />
           <Button 
-            onPress={() => alert(`Novo filme: ${newMovie}\nNova música: ${newMusic}`)}
+            onPress={() => alert(`Novo filme: ${newMovieName}\nNova música: ${newMusicName}`)}
             title={'ADD'}
           />
         </View>
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   name: {
+    width: '100%',
     fontWeight: 'bold',
     color: '#141',
     fontSize: 17,
