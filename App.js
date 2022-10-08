@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView, Switch } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView, Switch, Alert } from 'react-native';
 
 import { Picker } from '@react-native-picker/picker';
 import { Slider } from '@miblanchard/react-native-slider';
@@ -7,16 +7,19 @@ import React, { useState } from 'react';
 
 export default function App() {
 
-  const [newMovie, setNewMovie] = useState('');
-  const [newMusic, setNewMusic] = useState('');
+  const [newMovieName, setNewMovieName] = useState('');
+  const [newMusicName, setNewMusicName] = useState('');
 
   const [choosenCountry, setChoosenCountry] = useState('');
 
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = () => setIsEnabled(value => !value);
 
   const [sliderValue, setSliderValue] = useState(0);
 
+  function handleSubmit() {
+    Alert.alert('Submit', `Novo filme: ${newMovieName}\nNova música: ${newMusicName}\nQuero ir para: ${choosenCountry}`)
+  }
 
   return (
     <View style={styles.container}>
@@ -30,7 +33,7 @@ export default function App() {
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
         </View>
 
-        <View>
+        <View style={{width: '55%', alignItems: 'center'}}>
           <View>
             <Text>FILMES</Text>
             <Image 
@@ -69,6 +72,8 @@ export default function App() {
           </View>
         </View>
 
+      <View style={{borderBottomWidth: 1, borderBottomColor: 'gray', height: 10, width: 300}}></View>
+
         <View style={styles.inputsContainer}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Text>Cachoeira</Text>
@@ -81,26 +86,30 @@ export default function App() {
             <Text>Praia</Text>
           </View>
           <View style={{width: '100%'}}>
-            <Text>{`Escala que quero que a copa chegue logo: ${sliderValue}`}</Text>
+            <Text>{`Eu quero que a copa chegue logo em uma escala de: ${sliderValue}%`}</Text>
             <Slider 
               value={sliderValue}
               onValueChange={(value => setSliderValue(value))}
               containerStyle={{width: '100%'}}
               step={1}
               maximumValue={100}
+              thumbStyle={{borderColor: 'blue'}}
+              maximumTrackTintColor={'#4f8cab'}
+              minimumTrackTintColor={'#1a3340'}
+              thumbTintColor={'#072230'}
             />
           </View>
           <TextInput 
             placeholder='Adicione um filme' 
             style={styles.inputs}
-            onChangeText={setNewMovie}
-            value={newMovie}
+            onChangeText={setNewMovieName}
+            value={newMovieName}
           />
           <TextInput 
             placeholder='Adicione uma música' 
             style={styles.inputs}
-            onChangeText={setNewMusic}
-            value={newMusic}
+            onChangeText={setNewMusicName}
+            value={newMusicName}
           />
           <View style={{width: '100%', height: 10, marginBottom: 50}}>
             <Picker
@@ -117,9 +126,8 @@ export default function App() {
             </Picker>
           </View>
           <Button 
-            onPress={() => alert(`Novo filme: ${newMovie}\nNova música: ${newMusic}\nGostaria de viajar para: ${choosenCountry}`
-            )}
-            title={'ADD'}
+            onPress={handleSubmit}
+            title={'CONCLUIR'}
           />
         </View>
       </ScrollView>
@@ -136,6 +144,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
   name: {
+    width: '100%',
     fontWeight: 'bold',
     color: '#141',
     fontSize: 17,
@@ -143,16 +152,19 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 170,
-    height: 260
+    height: 260,
+    marginBottom: 10,
   },
   movies: {
     fontStyle: 'italic',
     color: '#901',
     fontSize: 12,
+    marginBottom: 15,
   },
   musics: {
     color: '#109',
     fontSize: 12,
+    marginBottom: 15,
   },
   inputsContainer: {
     marginTop: 20,
