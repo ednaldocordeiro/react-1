@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
         </View>
 
-        <View style={{width: '55%'}}>
+        <View style={{width: '55%', alignItems: 'center'}}>
           <View>
             <Text>FILMES</Text>
             <Image 
@@ -101,16 +101,19 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 170,
-    height: 260
+    height: 260,
+    marginBottom: 10,
   },
   movies: {
     fontStyle: 'italic',
     color: '#901',
     fontSize: 12,
+    marginBottom: 15,
   },
   musics: {
     color: '#109',
     fontSize: 12,
+    marginBottom: 15,
   },
   inputsContainer: {
     marginTop: 20,
