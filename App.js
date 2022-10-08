@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView, Switch } from 'react-native';
 
 import { Picker } from '@react-native-picker/picker';
 import React, { useState } from 'react';
@@ -10,6 +10,9 @@ export default function App() {
   const [newMusic, setNewMusic] = useState('');
 
   const [choosenCountry, setChoosenCountry] = useState('');
+
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
 
   return (
@@ -64,6 +67,16 @@ export default function App() {
         </View>
 
         <View style={styles.inputsContainer}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Text>Cachoeira</Text>
+            <Switch
+              trackColor={{ false: "#89b98f", true: "#81b0ff" }}
+              thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+            <Text>Praia</Text>
+          </View>
           <TextInput 
             placeholder='Adicione um filme' 
             style={styles.inputs}
