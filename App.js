@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, View, Image, ScrollView, Switch } from 'react-native';
 
 import { Picker } from '@react-native-picker/picker';
+import { Slider } from '@miblanchard/react-native-slider';
 import React, { useState } from 'react';
 
 export default function App() {
@@ -14,12 +15,14 @@ export default function App() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
+  const [sliderValue, setSliderValue] = useState('');
+
 
   return (
     <View style={styles.container}>
       <ScrollView  
         style={{width: '100%', height: '100%'}} 
-        contentContainerStyle={{paddingBottom: 20, alignItems: 'center'}}
+        contentContainerStyle={{paddingBottom: 20, alignItems: 'center', width: '100%'}}
         showsVerticalScrollIndicator={false}
       >
         <StatusBar style="auto" />
@@ -71,11 +74,21 @@ export default function App() {
             <Text>Cachoeira</Text>
             <Switch
               trackColor={{ false: "#89b98f", true: "#81b0ff" }}
-              thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+              thumbColor="#f4f3f4"
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
             <Text>Praia</Text>
+          </View>
+          <View style={{width: '100%'}}>
+            <Text>{`Escala que quero que a copa chegue logo: ${sliderValue}`}</Text>
+            <Slider 
+              value={sliderValue}
+              onValueChange={(value => setSliderValue(value))}
+              containerStyle={{width: '100%'}}
+              step={1}
+              maximumValue={100}
+            />
           </View>
           <TextInput 
             placeholder='Adicione um filme' 
