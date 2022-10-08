@@ -15,7 +15,7 @@ export default function App() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
-  const [sliderValue, setSliderValue] = useState('');
+  const [sliderValue, setSliderValue] = useState(0);
 
 
   return (
