@@ -6,21 +6,21 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <View>
-        <Text>Ednaldo Cordeiro Lins Junior</Text>
+        <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
       </View>
 
       <View>
         <View>
           <Text>FILMES</Text>
-          <Text>Vingadores: Ultimato</Text>
-          <Text>Shang-Chi</Text>
-          <Text>Jogos Vorazes</Text>
+          <Text style={styles.movies}>Vingadores: Ultimato</Text>
+          <Text style={styles.movies}>Shang-Chi</Text>
+          <Text style={styles.movies}>Jogos Vorazes</Text>
         </View>
         <View>
           <Text>MÚSICAS</Text>
-          <Text>Hymn for the Weekend - Coldplay</Text>
-          <Text>Bad Romance - Lady Gaga</Text>
-          <Text>Monster - Imagine Dragons</Text>
+          <Text style={styles.musics}>Hymn for the Weekend - Coldplay</Text>
+          <Text style={styles.musics}>Bad Romance - Lady Gaga</Text>
+          <Text style={styles.musics}>Monster - Imagine Dragons</Text>
         </View>
       </View>
     </View>
@@ -34,4 +34,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  name: {
+    fontWeight: 'bold',
+    color: '#141',
+    fontSize: 17,
+    textAlign: 'center',
+  },
+  movies: {
+    fontStyle: 'italic',
+    color: '#901',
+    fontSize: 12,
+  },
+  musics: {
+    color: '#109',
+    fontSize: 12,
+  }
 });
