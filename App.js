@@ -15,7 +15,7 @@ export default function App() {
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
         </View>
 
-        <View>
+        <View style={{width: '55%'}}>
           <View>
             <Text>FILMES</Text>
             <Image 
@@ -54,6 +54,8 @@ export default function App() {
           </View>
         </View>
 
+      <View style={{borderBottomWidth: 1, borderBottomColor: 'gray', height: 10, width: 300}}></View>
+
         <View style={styles.inputsContainer}>
           <TextInput 
             placeholder='Adicione um filme' 
@@ -69,7 +71,7 @@ export default function App() {
           />
           <Button 
             onPress={() => alert(`Novo filme: ${newMovieName}\nNova música: ${newMusicName}`)}
-            title={'ADD'}
+            title={'CONCLUIR'}
           />
         </View>
     </View>
