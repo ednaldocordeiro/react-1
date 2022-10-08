@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 export default function App() {
 
-  const [newMovie, setNewMovie] = useState('');
-  const [newMusic, setNewMusic] = useState('');
+  const [newMovieName, setNewMovieName] = useState('');
+  const [newMusicName, setNewMusicName] = useState('');
 
   return (
     <View style={styles.container}>
@@ -14,7 +14,7 @@ export default function App() {
         <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
       </View>
 
-      <View>
+      <View style={{width: '55%'}}>
         <View>
           <Text>FILMES</Text>
           <Text style={styles.movies}>Vingadores: Ultimato</Text>
@@ -29,22 +29,24 @@ export default function App() {
         </View>
       </View>
 
+      <View style={{borderBottomWidth: 1, borderBottomColor: 'gray', height: 10, width: 300}}></View>
+
       <View style={styles.inputsContainer}>
         <TextInput 
-          placeholder='Adicione um filme' 
+          placeholder='Insira o novo filme' 
           style={styles.inputs}
-          onChangeText={setNewMovie}
-          value={newMovie}
+          onChangeText={setNewMovieName}
+          value={newMovieName}
         />
         <TextInput 
-          placeholder='Adicione uma música' 
+          placeholder='Insira a nova música' 
           style={styles.inputs}
-          onChangeText={setNewMusic}
-          value={newMusic}
+          onChangeText={setNewMusicName}
+          value={newMusicName}
         />
         <Button 
-          onPress={() => alert(`Novo filme: ${newMovie}\nNova música: ${newMusic}`)}
-          title={'ADD'}
+          onPress={() => alert(`Novo filme: ${newMovieName}\nNova música: ${newMusicName}`)}
+          title={'CONCLUIR'}
         />
       </View>
     </View>
@@ -59,6 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   name: {
+    width: '100%',
     fontWeight: 'bold',
     color: '#141',
     fontSize: 17,
