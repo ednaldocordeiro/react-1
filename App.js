@@ -72,7 +72,7 @@ export default function App() {
       <View style={styles.divider}></View>
 
         <View style={styles.inputsContainer}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 20}}>
             <Text>Cachoeira</Text>
             <Switch
               trackColor={{ false: "#89b98f", true: "#81b0ff" }}
