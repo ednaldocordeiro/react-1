@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   musics: {
-    color: '#109',
+    color: '#00d',
     fontSize: 12,
   }
 });
