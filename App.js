@@ -169,7 +169,8 @@ const styles = StyleSheet.create({
   inputsContainer: {
     marginTop: 20,
     alignItems: 'center',
-    width: 200,
+    width: '100%',
+    paddingHorizontal: 20,
   }, 
   inputs: {
     borderColor: '#000000',
