@@ -10,7 +10,7 @@ export default function App() {
   const [newMovieName, setNewMovieName] = useState('');
   const [newMusicName, setNewMusicName] = useState('');
 
-  const [choosenCountry, setChoosenCountry] = useState('');
+  const [choosenCountry, setChoosenCountry] = useState('Thailand');
 
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(value => !value);
@@ -33,7 +33,7 @@ export default function App() {
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
         </View>
 
-        <View style={{width: '100%', alignItems: 'center', flexDirection: 'column'}}>
+        <View style={{width: '100%', alignItems: 'center', flexDirection: 'row'}}>
           <View style={{width: 200, alignItems: 'center'}}>
             <Text>FILMES</Text>
             <Image 
@@ -72,10 +72,10 @@ export default function App() {
           </View>
         </View>
 
-      <View style={{borderBottomWidth: 1, borderBottomColor: 'gray', height: 10, width: 300}}></View>
+      <View style={styles.divider}></View>
 
         <View style={styles.inputsContainer}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 20}}>
             <Text>Cachoeira</Text>
             <Switch
               trackColor={{ false: "#89b98f", true: "#81b0ff" }}
@@ -120,9 +120,9 @@ export default function App() {
               enabled
               style={styles.picker}
             >
+              <Picker.Item label={'Thailand'} value={'Thailand'} />
               <Picker.Item label={'USA'} value={'USA'} />
-              <Picker.Item label={'England'} value={'England'} />
-              <Picker.Item label={'Denmark'} value={'Denmark'} />
+              <Picker.Item label={'Spain'} value={'Spain'} />
             </Picker>
           </View>
           <Button 
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
     color: '#141',
     fontSize: 17,
     textAlign: 'center',
+    marginBottom: 20
   },
   image: {
     width: 170,
@@ -175,7 +176,7 @@ const styles = StyleSheet.create({
   inputs: {
     borderColor: '#000000',
     borderWidth: 1,
-    marginBottom: 15,
+    marginBottom: 20,
     width: '100%',
     padding: 5,
     borderRadius: 5,
@@ -185,5 +186,12 @@ const styles = StyleSheet.create({
     width: '100%', 
     height: '100%',
     borderRadius: 5,
+  },
+  divider: {
+    borderBottomWidth: 1, 
+    borderBottomColor: 'gray', 
+    height: 1, 
+    width: 300,
+    paddingVertical: 10,
   }
 });
