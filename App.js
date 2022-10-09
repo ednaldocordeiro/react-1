@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
   inputsContainer: {
     marginTop: 20,
     alignItems: 'center',
+    width: 200,
   }, 
   inputs: {
     borderColor: '#000000',
