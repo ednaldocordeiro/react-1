@@ -9,7 +9,7 @@ export default function App() {
   const [newMovieName, setNewMovieName] = useState('');
   const [newMusicName, setNewMusicName] = useState('');
 
-  const [choosenCountry, setChoosenCountry] = useState('');
+  const [choosenCountry, setChoosenCountry] = useState('Thailand');
 
 
   function handleSubmit() {
@@ -91,9 +91,9 @@ export default function App() {
               enabled
               style={styles.picker}
             >
+              <Picker.Item label={'Thailand'} value={'Thailand'} />
               <Picker.Item label={'USA'} value={'USA'} />
-              <Picker.Item label={'England'} value={'England'} />
-              <Picker.Item label={'Denmark'} value={'Denmark'} />
+              <Picker.Item label={'Spain'} value={'Spain'} />
             </Picker>
           </View>
           <Button 
@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
   inputsContainer: {
     marginTop: 20,
     alignItems: 'center',
-    width: 200,
   }, 
   inputs: {
     borderColor: '#000000',
