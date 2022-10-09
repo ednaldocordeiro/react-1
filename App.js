@@ -15,8 +15,8 @@ export default function App() {
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
         </View>
 
-        <View style={{width: '55%'}}>
-          <View>
+        <View style={{width: '100%', alignItems: 'center', flexDirection: 'column'}}>
+          <View style={{width: 200, alignItems: 'center'}}>
             <Text>FILMES</Text>
             <Image 
               source={require('./assets/vingadores.jpeg')}
@@ -34,7 +34,7 @@ export default function App() {
             />
             <Text style={styles.movies}>Jogos Vorazes</Text>
           </View>
-          <View>
+          <View style={{width: 200, alignItems: 'center'}}>
             <Text>MÚSICAS</Text>
             <Image 
               source={require('./assets/Hymn-For-The-Weekend.jpg')}
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    width: 50,
+    width: 60,
     height: 60
   },
   movies: {
