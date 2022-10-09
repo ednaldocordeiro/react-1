@@ -54,7 +54,7 @@ export default function App() {
           </View>
         </View>
 
-      <View style={{borderBottomWidth: 1, borderBottomColor: 'gray', height: 10, width: 300}}></View>
+      <View style={styles.divider}></View>
 
         <View style={styles.inputsContainer}>
           <TextInput 
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     color: '#141',
     fontSize: 17,
     textAlign: 'center',
+    marginBottom: 20
   },
   image: {
     width: 60,
@@ -107,15 +108,22 @@ const styles = StyleSheet.create({
   },
   inputsContainer: {
     marginTop: 20,
-    alignItems: 'center',
-    width: 200,
+    width: '100%',
+    paddingHorizontal: 20,
   }, 
   inputs: {
     borderColor: '#000000',
     borderWidth: 1,
-    marginBottom: 15,
+    marginBottom: 20,
     width: '100%',
     padding: 5,
     borderRadius: 5,
+  },
+  divider: {
+    borderBottomWidth: 1, 
+    borderBottomColor: 'gray', 
+    height: 1, 
+    width: 300,
+    paddingVertical: 10,
   }
 });
