@@ -33,7 +33,7 @@ export default function App() {
           <Text style={styles.name}>Ednaldo Cordeiro Lins Junior</Text>
         </View>
 
-        <View style={{width: '100%', alignItems: 'center', flexDirection: 'row'}}>
+        <View style={{width: '100%', alignItems: 'center', flexDirection: 'column'}}>
           <View style={{width: 200, alignItems: 'center'}}>
             <Text>FILMES</Text>
             <Image 
@@ -149,7 +149,6 @@ const styles = StyleSheet.create({
     color: '#141',
     fontSize: 17,
     textAlign: 'center',
-    marginBottom: 20
   },
   image: {
     width: 170,
